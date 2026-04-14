@@ -4,25 +4,15 @@ namespace Controllers\Mantenimientos\Especialidades;
 
 use Controllers\PublicController;
 use Views\Renderer;
-use Dao\Mantenimientos\Especialidades as EspecialidadesDao;
-
-
-const LIST_VIEW_TEMPLATE = "mantenimientos/especialidades/listado";
+use Dao\Mantenimientos\Especialidades as DaoEspecialidades;
 
 class Listado extends PublicController {
 
-    private array $especialidadesList = [];
-
     public function run(): void {
-
-        $this->especialidadesList = EspecialidadesDao::getAllEspecialidades();
-
-        Renderer::render(LIST_VIEW_TEMPLATE, $this->prepareViewData());
-    }
-
-    private function prepareViewData(): array {
-        return [
-            "especialidades" => $this->especialidadesList
+        $viewData = [
+            "especialidades" => DaoEspecialidades::getAll()
         ];
+
+        Renderer::render("mantenimientos/especialidades/listado", $viewData);
     }
 }

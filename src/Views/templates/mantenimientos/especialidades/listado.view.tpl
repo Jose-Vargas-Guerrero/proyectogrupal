@@ -1,14 +1,12 @@
 <section class="container">
-    <h2>Nuestras Especialidades</h2>
+    <h1>Gestión de Especialidades</h1>
     <hr>
     <table>
         <thead>
             <tr>
                 <th>Código</th>
                 <th>Nombre</th>
-                <th>Descripción</th>
                 <th>Precio</th>
-                <th>Imagen</th>
             </tr>
         </thead>
         <tbody>
@@ -16,10 +14,12 @@
             <tr>
                 <td>{{id}}</td>
                 <td>{{nombre}}</td>
-                <td>{{descripcion}}</td>
                 <td>L. {{precio}}</td>
                 <td>
-                    <img src="{{imagenurl}}" alt="{{nombre}}" style="width: 100px; height: auto;">
+                    <a href="index.php?page=Mantenimientos-Especialidades-Formulario&mode=INS&id=0" class="btn-primary">Nuevo Platillo</a>
+                    <a href="index.php?page=Mantenimientos-Especialidades-Formulario&mode=DSP&id={{id}}">Ver</a>
+                    <a href="index.php?page=Mantenimientos-Especialidades-Formulario&mode=UPD&id={{id}}">Editar</a>
+                    <a href="index.php?page=Mantenimientos-Especialidades-Formulario&mode=DEL&id={{id}}">Eliminar</a>
                 </td>
             </tr>
             {{endfor especialidades}}

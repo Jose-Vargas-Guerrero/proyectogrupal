@@ -12,7 +12,7 @@ class Index extends PublicController
     public function run(): void
     {
         // 2. Obtenemos las especialidades reales de la DB
-        $especialidadesDB = EspecialidadesDao::getAllEspecialidades();
+        $especialidadesDB = EspecialidadesDao::getAll();
 
         $viewData = array(
             "hero_title" => "Comida china e internacional",
