@@ -918,7 +918,7 @@ header {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    background-color: #000;
+    background-color: #d61d1d;
     color: #fff;
     padding: 0px;
     flex-wrap: wrap;
@@ -977,7 +977,7 @@ header nav {
     bottom: 0px;
     height: calc(100% - 51px);
     transform: translateX(-100vw);
-    background-color: #000;
+    background-color: #d61d1d;
     color: #fff;
     transition: transform 250ms ease-in-out;
     z-index: 1000

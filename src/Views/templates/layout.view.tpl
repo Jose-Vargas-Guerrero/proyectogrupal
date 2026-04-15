@@ -37,7 +37,7 @@
   {{{page_content}}}
   </main>
   <footer>
-    <div>Todo los Derechos Reservados {{~CURRENT_YEAR}} &copy;</div>
+    <div>{{SITE_TITLE}} - Todos los derechos reservados {{~CURRENT_YEAR}} &copy;</div>
   </footer>
   {{foreach EndScripts}}
     <script src="{{~BASE_DIR}}/{{this}}"></script>

@@ -9,9 +9,19 @@
       "id": "Menu_SignUp",
       "nav_url": "index.php?page=Sec_Register",
       "nav_label": "<i class=\"fas fa-user-plus\"></i>&nbsp;Crear Cuenta"
+    },
+    {
+      "id": "Menu_Menu",
+      "nav_url": "index.php?page=Menu-Listado",
+      "nav_label": "<i class=\"fas fa-utensils\"></i>&nbsp;Menú"
     }
   ],
   "private": [
+    {
+      "id": "Menu_Menu",
+      "nav_url": "index.php?page=Menu-Listado",
+      "nav_label": "<i class=\"fas fa-utensils\"></i>&nbsp;Menú"
+    },
     {
       "id": "Menu_RolesUsuarios",
       "nav_url": "index.php?page=Mantenimientos-RolesUsuarios-Listado",
@@ -26,6 +36,11 @@
       "id": "Menu_PaymentCheckout",
       "nav_url": "index.php?page=Checkout_Checkout",
       "nav_label": "Carretilla de Compra"
+    },
+    {
+      "id": "Menu_Especialidades",
+      "nav_url": "index.php?page=Mantenimientos-Especialidades-Listado",
+      "nav_label": "<i class=\"fas fa-utensils\"></i>&nbsp;Especialidades"
     }
   ]
 }
