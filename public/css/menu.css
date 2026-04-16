@@ -196,50 +196,7 @@ body {
     background: #b22222;
 }
 
-.hk-menu-actions{
-    display: flex;
-    justify-content: center;
-    gap: 14px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-}
 
-/* Botón base */
-.hk-action-btn{
-    text-decoration: none;
-    padding: 12px 22px;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 15px;
-    transition: all 0.25s ease;
-    display: inline-block;
-}
-
-/* Botón carrito (principal) */
-.hk-cart-btn{
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-    color: #fff;
-    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
-}
-
-.hk-cart-btn:hover{
-    background: linear-gradient(135deg, #d84333, #a93226);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(231, 76, 60, 0.4);
-}
-
-/* Botón volver */
-.hk-home-btn{
-    background: #2c2c2c;
-    color: #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.hk-home-btn:hover{
-    background: #1f1f1f;
-    transform: translateY(-2px);
-}
 
 /* RESPONSIVE */
 @media (max-width: 1100px) {
