@@ -4,7 +4,7 @@ body {
     padding: 0;
 }
 
-/* HERO DEL MENÚ */
+
 .hk-menu-hero {
     min-height: 48vh;
     background:
@@ -56,7 +56,7 @@ body {
     color: rgba(255, 255, 255, 0.95);
 }
 
-/* SECCIONES */
+
 .hk-menu-section {
     max-width: 1200px;
     margin: 0 auto;
@@ -90,14 +90,13 @@ body {
     font-size: 1rem;
 }
 
-/* GRID */
+
 .hk-menu-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
 }
 
-/* CARDS */
 .hk-menu-card {
     background: #ffffff;
     border-radius: 18px;
@@ -144,7 +143,6 @@ body {
     flex-grow: 1;
 }
 
-/* PRECIO */
 .hk-price {
     font-size: 1.1rem;
     font-weight: 800;
@@ -152,7 +150,6 @@ body {
     margin-bottom: 1rem;
 }
 
-/* BOTÓN AGREGAR */
 .hk-menu-btn {
     display: inline-block;
     width: 100%;
@@ -197,8 +194,6 @@ body {
 }
 
 
-
-/* RESPONSIVE */
 @media (max-width: 1100px) {
     .hk-menu-grid {
         grid-template-columns: repeat(3, 1fr);

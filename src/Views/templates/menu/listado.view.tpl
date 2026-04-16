@@ -22,7 +22,8 @@
                 <h3>{{nombre}}</h3>
                 <p>{{descripcion}}</p>
                 <div class="hk-price">L. {{precio}}</div>
-                <a href="index.php?page=Menu-Cart&action=add&id={{id}}&nombre={{nombre}}&precio={{precio}}&returnto=menu&anchor=item-{{id}}" class="hk-menu-btn" style="text-decoration:none; text-align:center; display:block;">
+                <a href="index.php?page=Menu-Cart&action=add&id={{id}}&nombre={{nombre}}&precio={{precio}}&returnto=menu&anchor=item-{{id}}" 
+                class="hk-menu-btn" style="text-decoration:none; text-align:center; display:block;">
                     Agregar
                 </a>
             </div>
@@ -51,7 +52,7 @@
     flex-wrap: wrap;
 }
 
-/* Botón base */
+
 .hk-action-btn{
     text-decoration: none;
     padding: 12px 22px;
@@ -62,7 +63,7 @@
     display: inline-block;
 }
 
-/* Botón carrito (principal) */
+
 .hk-cart-btn{
     background: linear-gradient(135deg, #e74c3c, #c0392b);
     color: #fff;
@@ -76,7 +77,7 @@
     box-shadow: 0 6px 14px rgba(0,0,0,0.2);
 }
 
-/* Botón volver */
+
 .hk-home-btn{
     background: linear-gradient(135deg, #e74c3c, #c0392b);
     color: #fff;
