@@ -38,6 +38,11 @@
       "nav_label": "Carretilla de Compra"
     },
     {
+      "id": "Menu_Historial",
+      "nav_url": "index.php?page=Historial_Listado",
+      "nav_label": "<i class=\"fas fa-receipt\"></i>&nbsp;Historial de Transacciones"
+    },
+    {
       "id": "Menu_Especialidades",
       "nav_url": "index.php?page=Mantenimientos-Especialidades-Listado",
       "nav_label": "<i class=\"fas fa-utensils\"></i>&nbsp;Especialidades"

@@ -39,3 +39,17 @@ FROM funciones;
 -- 4. CLIENTE
 INSERT INTO funciones_roles (rolescod, fncod, fnrolest)
 VALUES ('CLIENTE', 'Menu_Menu', 'ACT');
+
+INSERT INTO funciones (fncod, fndsc, fnest, fntyp) VALUES
+('Menu_Historial', 'Menú de historial de compras', 'ACT', 'MNU'),
+('Controllers\\Historial\\Listado', 'Listado de historial', 'ACT', 'CTR'),
+('Controllers\\Historial\\Detalle', 'Detalle de historial', 'ACT', 'CTR');
+
+INSERT INTO funciones_roles (rolescod, fncod, fnrolest) VALUES
+('ADMIN', 'Menu_Historial', 'ACT'),
+('ADMIN', 'Controllers\\Historial\\Listado', 'ACT'),
+('ADMIN', 'Controllers\\Historial\\Detalle', 'ACT'),
+
+('CLIENTE', 'Menu_Historial', 'ACT'),
+('CLIENTE', 'Controllers\\Historial\\Listado', 'ACT'),
+('CLIENTE', 'Controllers\\Historial\\Detalle', 'ACT');

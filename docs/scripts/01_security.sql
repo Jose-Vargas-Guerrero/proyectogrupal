@@ -65,3 +65,34 @@ CREATE TABLE funciones_roles (
         ON DELETE CASCADE
         ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE transacciones (
+    transcod INT AUTO_INCREMENT PRIMARY KEY,
+    usercod BIGINT(10) NOT NULL,
+    paypal_orderid VARCHAR(100) NOT NULL,
+    metodo_pago VARCHAR(30) NOT NULL DEFAULT 'PAYPAL',
+    subtotal DECIMAL(10,2) NOT NULL,
+    isv DECIMAL(10,2) NOT NULL,
+    total DECIMAL(10,2) NOT NULL,
+    estado VARCHAR(20) NOT NULL DEFAULT 'COMPLETED',
+    transfch DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE KEY uk_paypal_orderid (paypal_orderid),
+    CONSTRAINT fk_transacciones_usuario
+        FOREIGN KEY (usercod) REFERENCES usuario(usercod)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE transacciones_detalle (
+    transdetcod INT AUTO_INCREMENT PRIMARY KEY,
+    transcod INT NOT NULL,
+    itemid INT NOT NULL,
+    nombre VARCHAR(150) NOT NULL,
+    precio DECIMAL(10,2) NOT NULL,
+    cantidad INT NOT NULL,
+    subtotal_linea DECIMAL(10,2) NOT NULL,
+    CONSTRAINT fk_transdetalle_transaccion
+        FOREIGN KEY (transcod) REFERENCES transacciones(transcod)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);

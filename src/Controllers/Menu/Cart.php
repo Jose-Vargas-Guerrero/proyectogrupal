@@ -1,51 +1,96 @@
 <?php
-namespace Controllers\Menu; // Sincronizado con Listado.php
+
+namespace Controllers\Menu;
 
 use Controllers\PublicController;
-use Utilities\Site;
+use Views\Renderer;
 
-class Cart extends PublicController {
-    public function run(): void {
+class Cart extends PublicController
+{
+    public function run(): void
+    {
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
-
-        $id = $_GET["id"] ?? "";
-        $nombre = $_GET["nombre"] ?? "";
-        $precio = floatval($_GET["precio"] ?? 0);
-        $action = $_GET["action"] ?? "add";
 
         if (!isset($_SESSION["order_cart"])) {
             $_SESSION["order_cart"] = [];
         }
 
-        switch ($action) {
-            case "add":
-                if (isset($_SESSION["order_cart"][$id])) {
-                    $_SESSION["order_cart"][$id]["cantidad"]++;
-                } else {
-                    $_SESSION["order_cart"][$id] = [
-                        "id" => $id,
-                        "nombre" => $nombre,
-                        "precio" => $precio,
-                        "cantidad" => 1
-                    ];
-                }
-                break;
-            case "sub":
-                if (isset($_SESSION["order_cart"][$id])) {
-                    $_SESSION["order_cart"][$id]["cantidad"]--;
-                    if ($_SESSION["order_cart"][$id]["cantidad"] <= 0) {
-                        unset($_SESSION["order_cart"][$id]);
+        $action = $_GET["action"] ?? "";
+        $id = intval($_GET["id"] ?? 0);
+        $nombre = $_GET["nombre"] ?? "";
+        $precio = floatval($_GET["precio"] ?? 0);
+        $returnto = $_GET["returnto"] ?? "cart";
+        $anchor = $_GET["anchor"] ?? "";
+
+        if ($action !== "") {
+            switch ($action) {
+                case "add":
+                    if ($id > 0) {
+                        if (isset($_SESSION["order_cart"][$id])) {
+                            $_SESSION["order_cart"][$id]["cantidad"]++;
+                        } else {
+                            $_SESSION["order_cart"][$id] = [
+                                "id" => $id,
+                                "nombre" => $nombre,
+                                "precio" => $precio,
+                                "cantidad" => 1
+                            ];
+                        }
                     }
-                }
-                break;
-            case "clear":
-                unset($_SESSION["order_cart"]);
-                break;
+                    $this->redirectAfterAction($returnto, $anchor);
+                    break;
+
+                case "sub":
+                    if ($id > 0 && isset($_SESSION["order_cart"][$id])) {
+                        $_SESSION["order_cart"][$id]["cantidad"]--;
+                        if ($_SESSION["order_cart"][$id]["cantidad"] <= 0) {
+                            unset($_SESSION["order_cart"][$id]);
+                        }
+                    }
+                    $this->redirectAfterAction("cart", "");
+                    break;
+
+                case "clear":
+                    $_SESSION["order_cart"] = [];
+                    \Utilities\Site::redirectTo("index.php?page=Menu-Cart");
+                    break;
+            }
         }
 
-        // Redirigir a la página correcta (Menu-Listado)
-        Site::redirectTo("index.php?page=Menu-Listado");
+        $cart = $_SESSION["order_cart"];
+        $subtotal = 0;
+
+        foreach ($cart as $item) {
+            $subtotal += ((float)$item["precio"] * (int)$item["cantidad"]);
+        }
+
+        $isv = $subtotal * 0.15;
+        $total = $subtotal + $isv;
+
+        $viewData = [
+            "has_items" => count($cart) > 0,
+            "cart_items" => array_values($cart),
+            "subtotal" => number_format($subtotal, 2),
+            "isv" => number_format($isv, 2),
+            "total" => number_format($total, 2)
+        ];
+
+        Renderer::render("menu/cart", $viewData);
+    }
+
+    private function redirectAfterAction(string $returnto, string $anchor): void
+    {
+        if ($returnto === "menu") {
+            $url = "index.php?page=Menu-Listado";
+            if ($anchor !== "") {
+                $url .= "#" . $anchor;
+            }
+            \Utilities\Site::redirectTo($url);
+        } else {
+            \Utilities\Site::redirectTo("index.php?page=Menu-Cart");
+        }
     }
 }
+?>
