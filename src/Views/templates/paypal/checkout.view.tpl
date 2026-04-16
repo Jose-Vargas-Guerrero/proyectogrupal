@@ -33,7 +33,7 @@
 
     <div class="pay-actions">
         <form action="index.php?page=Checkout_Checkout" method="post">
-            <button type="submit" class="btn-primary-soft">Pagar con PayPal Sandbox</button>
+            <button type="submit" class="btn-primary-soft">Pagar</button>
         </form>
         <a href="index.php?page=Menu-Cart" class="btn-secondary-soft btn-link-soft">Cancelar</a>
     </div>
