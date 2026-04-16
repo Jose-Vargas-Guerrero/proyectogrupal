@@ -8,7 +8,7 @@ class Especialidades extends Table
 {
     public static function getAll(): array
     {
-        $sqlstr = "SELECT * FROM especialidades;";
+        $sqlstr = "SELECT * FROM especialidades ORDER BY categoria, nombre;";
         return self::obtenerRegistros($sqlstr, []);
     }
 
@@ -18,24 +18,28 @@ class Especialidades extends Table
         return self::obtenerUnRegistro($sqlstr, ["id" => $id]);
     }
 
-    public static function insert($nombre, $descripcion, $precio, $imagenurl): int
+    public static function insert($nombre, $descripcion, $precio, $imagenurl, $categoria): int
     {
-        $sqlstr = "INSERT INTO especialidades (nombre, descripcion, precio, imagenurl)
-                   VALUES (:nombre, :descripcion, :precio, :imagenurl);";
+        $sqlstr = "INSERT INTO especialidades (nombre, descripcion, precio, imagenurl, categoria)
+                   VALUES (:nombre, :descripcion, :precio, :imagenurl, :categoria);";
 
         return self::executeNonQuery($sqlstr, [
             "nombre" => $nombre,
             "descripcion" => $descripcion,
             "precio" => $precio,
-            "imagenurl" => $imagenurl
+            "imagenurl" => $imagenurl,
+            "categoria" => $categoria
         ]);
     }
 
-    public static function update($id, $nombre, $descripcion, $precio, $imagenurl): int
+    public static function update($id, $nombre, $descripcion, $precio, $imagenurl, $categoria): int
     {
         $sqlstr = "UPDATE especialidades
-                   SET nombre = :nombre, descripcion = :descripcion,
-                       precio = :precio, imagenurl = :imagenurl
+                   SET nombre = :nombre,
+                       descripcion = :descripcion,
+                       precio = :precio,
+                       imagenurl = :imagenurl,
+                       categoria = :categoria
                    WHERE id = :id;";
 
         return self::executeNonQuery($sqlstr, [
@@ -43,7 +47,8 @@ class Especialidades extends Table
             "nombre" => $nombre,
             "descripcion" => $descripcion,
             "precio" => $precio,
-            "imagenurl" => $imagenurl
+            "imagenurl" => $imagenurl,
+            "categoria" => $categoria
         ]);
     }
 

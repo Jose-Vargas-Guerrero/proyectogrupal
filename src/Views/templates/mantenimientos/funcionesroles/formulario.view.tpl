@@ -107,169 +107,169 @@
         </div>
     </form>
 </section>
-
 <style>
-    .frm-title {
-        margin-bottom: 18px;
-    }
+     .frm-title {
+     margin-bottom: 18px;
+ }
 
-    .frm-card {
-        background: #f7f7f7;
-        border: 1px solid #cfcfcf;
-        padding: 22px 26px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        border-radius: 4px;
-    }
+ .frm-card {
+     background: #f7f7f7;
+     border: 1px solid #cfcfcf;
+     padding: 22px 26px;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+     border-radius: 4px;
+ }
 
-    .frm-row {
-        margin-bottom: 14px;
-    }
+ .frm-row {
+     margin-bottom: 14px;
+ }
 
-    .frm-label {
-        font-weight: 600;
-        color: #222;
-    }
+ .frm-label {
+     font-weight: 600;
+     color: #222;
+ }
 
-    .frm-input {
-        width: 100%;
-        height: 42px;
-        border: 1px solid #bdbdbd;
-        background: #f1f1f1;
-        padding: 0 10px;
-        box-sizing: border-box;
-    }
+ .frm-input {
+     width: 100%;
+     height: 42px;
+     border: 1px solid #bdbdbd;
+     background: #f1f1f1;
+     padding: 0 10px;
+     box-sizing: border-box;
+ }
 
-    .frm-select {
-        width: 100%;
-        height: 45px;
-        font-size: 15px;
-        border: 1px solid #bdbdbd;
-        background: #fff;
-        padding: 0 10px;
-        box-sizing: border-box;
-    }
+ .frm-select {
+     width: 100%;
+     height: 45px;
+     font-size: 15px;
+     border: 1px solid #bdbdbd;
+     background: #fff;
+     padding: 0 10px;
+     box-sizing: border-box;
+ }
 
-    .frm-subtitle {
-        margin-top: 8px;
-        margin-bottom: 14px;
-        font-size: 28px;
-    }
+ .frm-subtitle {
+     margin-top: 8px;
+     margin-bottom: 14px;
+     font-size: 28px;
+ }
 
-    .table-wrap {
-        width: 100%;
-        overflow-x: auto;
-        border: 1px solid #d7d7d7;
-        background: #fff;
-    }
+ .table-wrap {
+     width: 100%;
+     overflow-x: auto;
+     border: 1px solid #d7d7d7;
+     background: #fff;
+ }
 
-    .frm-table {
-        width: 100%;
-        border-collapse: collapse;
-        table-layout: fixed;
-        font-size: 14px;
-    }
+ .frm-table {
+     width: 100%;
+     border-collapse: collapse;
+     table-layout: fixed;
+     font-size: 14px;
+ }
 
-    .frm-table thead tr {
-        background: #efefef;
-    }
+ .frm-table thead tr {
+     background: #efefef;
+ }
 
-    .frm-table th {
-        text-align: left;
-        padding: 10px 8px;
-        border-bottom: 1px solid #d0d0d0;
-    }
+ .frm-table th {
+     text-align: left;
+     padding: 10px 8px;
+     border-bottom: 1px solid #d0d0d0;
+ }
 
-    .frm-table td {
-        padding: 10px 8px;
-        border-bottom: 1px solid #e3e3e3;
-        vertical-align: top;
-    }
+ .frm-table td {
+     padding: 10px 8px;
+     border-bottom: 1px solid #e3e3e3;
+     vertical-align: top;
+ }
 
-    .frm-table tbody tr:hover {
-        background: #fafafa;
-    }
+ .frm-table tbody tr:hover {
+     background: #fafafa;
+ }
 
-    .col-funcion {
-        width: 36%;
-    }
+ .col-funcion {
+     width: 36%;
+ }
 
-    .col-descripcion {
-        width: 34%;
-    }
+ .col-descripcion {
+     width: 34%;
+ }
 
-    .col-estado {
-        width: 8%;
-        text-align: center;
-    }
+ .col-estado {
+     width: 8%;
+     text-align: center;
+ }
 
-    .col-tipo {
-        width: 8%;
-        text-align: center;
-    }
+ .col-tipo {
+     width: 8%;
+     text-align: center;
+ }
 
-    .col-accion {
-        width: 14%;
-        text-align: center;
-    }
+ .col-accion {
+     width: 14%;
+     text-align: center;
+ }
 
-    .cell-break {
-        word-break: break-word;
-    }
+ .cell-break {
+     word-break: break-word;
+ }
 
-    .cell-center {
-        text-align: center;
-    }
+ .cell-center {
+     text-align: center;
+ }
 
-    .action-link {
-        display: inline-block;
-        text-decoration: none;
-        padding: 6px 10px;
-        border-radius: 4px;
-        font-weight: 600;
-        transition: all 0.2s ease-in-out;
-    }
+ .action-link {
+     display: inline-block;
+     text-decoration: none;
+     padding: 6px 10px;
+     border-radius: 4px;
+     font-weight: 600;
+     transition: all 0.2s ease-in-out;
+ }
 
-    .action-danger {
-        background: #fbe4e4;
-        color: #9b1c1c;
-        border: 1px solid #efb3b3;
-    }
+ .action-danger {
+     background: #fbe4e4;
+     color: #9b1c1c;
+     border: 1px solid #efb3b3;
+ }
 
-    .action-danger:hover {
-        background: #f4cfcf;
-    }
+ .action-danger:hover {
+     background: #f4cfcf;
+ }
 
-    .frm-actions {
-        margin-top: 18px;
-    }
+ .frm-actions {
+     margin-top: 18px;
+ }
 
-    .btn-primary-soft,
-    .btn-secondary-soft {
-        border: none;
-        padding: 10px 18px;
-        border-radius: 4px;
-        font-weight: 600;
-        cursor: pointer;
-    }
+ .btn-primary-soft,
+ .btn-secondary-soft {
+     border: none;
+     padding: 10px 18px;
+     border-radius: 4px;
+     font-weight: 600;
+     cursor: pointer;
+ }
 
-    .btn-primary-soft {
-        background: #2d8cf0;
-        color: #fff;
-    }
+ .btn-primary-soft {
+     background: #2d8cf0;
+     color: #fff;
+ }
 
-    .btn-primary-soft:hover {
-        background: #2276cc;
-    }
+ .btn-primary-soft:hover {
+     background: #2276cc;
+ }
 
-    .btn-secondary-soft {
-        background: #b5b5b5;
-        color: #fff;
-    }
+ .btn-secondary-soft {
+     background: #b5b5b5;
+     color: #fff;
+ }
 
-    .btn-secondary-soft:hover {
-        background: #969696;
-    }
+ .btn-secondary-soft:hover {
+     background: #969696;
+ }
 </style>
+
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {

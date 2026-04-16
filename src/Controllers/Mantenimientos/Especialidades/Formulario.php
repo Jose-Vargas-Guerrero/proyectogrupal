@@ -39,6 +39,7 @@ class Formulario extends PrivateController
     private $descripcion = "";
     private $precio = 0;
     private $imagenurl = "";
+    private $categoria = "Especialidades";
     private $mode = "";
     private $xsrfToken = "";
 
@@ -55,7 +56,8 @@ class Formulario extends PrivateController
                             $this->nombre,
                             $this->descripcion,
                             $this->precio,
-                            $this->imagenurl
+                            $this->imagenurl,
+                            $this->categoria
                         ) !== 0) {
                             Site::redirectToWithMsg(
                                 ESPECIALIDADES_LISTADO_URL,
@@ -70,7 +72,8 @@ class Formulario extends PrivateController
                             $this->nombre,
                             $this->descripcion,
                             $this->precio,
-                            $this->imagenurl
+                            $this->imagenurl,
+                            $this->categoria
                         ) !== 0) {
                             Site::redirectToWithMsg(
                                 ESPECIALIDADES_LISTADO_URL,
@@ -129,6 +132,7 @@ class Formulario extends PrivateController
         $this->descripcion = $tmp["descripcion"];
         $this->precio = $tmp["precio"];
         $this->imagenurl = $tmp["imagenurl"];
+        $this->categoria = $tmp["categoria"];
     }
 
     private function CapturarDatos()
@@ -138,6 +142,7 @@ class Formulario extends PrivateController
         $this->descripcion = $_POST["descripcion"] ?? "";
         $this->precio = floatval($_POST["precio"] ?? "0");
         $this->imagenurl = $_POST["imagenurl"] ?? "";
+        $this->categoria = $_POST["categoria"] ?? "Especialidades";
         $this->xsrfToken = $_POST["uuid"] ?? "";
     }
 
@@ -168,10 +173,17 @@ class Formulario extends PrivateController
         $this->viewData["descripcion"] = $this->descripcion;
         $this->viewData["precio"] = $this->precio;
         $this->viewData["imagenurl"] = $this->imagenurl;
+        $this->viewData["categoria"] = $this->categoria;
         $this->viewData["readonly"] = ($this->mode === 'DEL' || $this->mode === 'DSP') ? 'readonly' : '';
         $this->viewData["showBtn"] = ($this->mode !== 'DSP');
         $this->viewData["confirmToolTip"] = $this->confirmTooltips[$this->mode];
         $this->viewData["xsrf_token"] = $this->GenerateXSRFToken();
+        $this->viewData["isInsert"] = ($this->mode === "INS");
+
+        $this->viewData["catMariscos"] = ($this->categoria === "Mariscos") ? 'selected' : '';
+        $this->viewData["catArroces"] = ($this->categoria === "Arroces") ? 'selected' : '';
+        $this->viewData["catPlatosFavoritos"] = ($this->categoria === "Platos Favoritos") ? 'selected' : '';
+        $this->viewData["catEspecialidades"] = ($this->categoria === "Especialidades") ? 'selected' : '';
     }
 
     private function GenerateXSRFToken()
