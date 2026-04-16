@@ -13,7 +13,7 @@ class Listado extends PublicController
         // 1. Iniciar sesión para leer el carrito
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
-        }
+        }   
 
         $categorias = MenuDAO::getCategorias();
         $menuData = [];
